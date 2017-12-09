@@ -1,1 +1,10 @@
-/build/
+build/
+.settings/
+classes/
+phoenix/
+target/
+.classpath
+.project
+.iml
+.idea/
+.DS_Store/
