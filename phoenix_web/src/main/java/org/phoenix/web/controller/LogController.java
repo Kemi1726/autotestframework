@@ -117,6 +117,13 @@ public class LogController {
 		model.addAttribute("datas", caseLogService.getCaseLogPagerByBatchLog(id));
 		return "log/bcaselist";
 	}
+
+	@RequestMapping("/AI_CASE/{id}")
+	public String batchAICaseList(@PathVariable Integer id, HttpSession session, Model model){
+		model.addAttribute("logId", id);
+		model.addAttribute("datas", caseLogService.getCaseLogPagerByBatchLog(id));
+		return "log/bcaselist";
+	}
 	@RequestMapping("/MOBILE_CASE/{id}")
 	public String batchMobileCaseList(@PathVariable Integer id,HttpSession session,Model model){
 		model.addAttribute("logId", id);

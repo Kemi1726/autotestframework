@@ -51,7 +51,7 @@ public class DataTemplateBean {
     public void setDescription(String description) {
         this.description = description;
     }
-    @OneToMany(mappedBy = "dataTemlateBean", targetEntity = DataTemplateBean.class, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "dataTemplateBean", targetEntity = DataTemplateFieldBean.class,cascade = CascadeType.ALL)
     public Set<DataTemplateFieldBean> getDataTemplateFieldBeans() {
         return dataTemplateFieldBeans;
     }

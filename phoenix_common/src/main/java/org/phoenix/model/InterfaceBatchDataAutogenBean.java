@@ -74,18 +74,19 @@ public class InterfaceBatchDataAutogenBean {
         this.bodyContent = bodyContent;
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "caseId")
+    @ManyToOne(fetch= FetchType.EAGER)
+    @JoinColumn(name="caseId")
     @LazyCollection(LazyCollectionOption.FALSE)
     public CaseBean getCaseBean() {
         return caseBean;
     }
 
+
     public void setCaseBean(CaseBean caseBean) {
         this.caseBean = caseBean;
     }
 
-    @OneToMany(mappedBy = "InterfaceBatchDataAutogenBean", targetEntity = InterfaceDataAutogenBean.class)
+    @OneToMany(mappedBy = "interfaceBatchDataAutogenBean", targetEntity = InterfaceDataAutogenBean.class)
     @LazyCollection(LazyCollectionOption.FALSE)
     @Fetch(FetchMode.SUBSELECT)
     public List<InterfaceDataAutogenBean> getInterfaceDataAutogenBeanList() {

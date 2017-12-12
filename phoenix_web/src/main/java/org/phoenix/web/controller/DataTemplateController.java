@@ -35,11 +35,6 @@ public class DataTemplateController {
     @Autowired
     IDataTemplateService dataTemplateService;
 
-    @RequestMapping("/test/task/{id}")
-    @ResponseBody()
-    public String testTask(Model model, @PathVariable Integer id, HttpSession httpSession){
-        return  String.valueOf(dataTemplateService.updateTask(id));
-    }
 
     @RequestMapping("/list")
     public String list(Model model, HttpSession httpSession){

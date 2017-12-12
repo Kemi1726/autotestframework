@@ -59,8 +59,5 @@ public interface IDataTemplateService {
 
     void  updateDataTemplateFieldBean(DataTemplateFieldBean dataTemplateFieldBean);
 
-    int updateTask(Integer taskId);
-
-    public void updateWork(Integer taskId);
 
 }
