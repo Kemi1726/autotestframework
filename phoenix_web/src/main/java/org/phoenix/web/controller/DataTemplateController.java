@@ -6,7 +6,9 @@ import org.phoenix.model.DataTemplateBean;
 import org.phoenix.model.DataTemplateFieldBean;
 import org.phoenix.web.dto.DataTemplateDTO;
 import org.phoenix.web.dto.DataTemplateFieldDTO;
+import org.phoenix.web.service.impl.DataTemplateService;
 import org.phoenix.web.util.EnumUtils;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.ui.Model;
 import org.phoenix.web.auth.AuthClass;
 import org.phoenix.web.model.User;
@@ -17,6 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -32,8 +35,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @AuthClass("login")
 public class DataTemplateController {
 
-    @Autowired
-    IDataTemplateService dataTemplateService;
+
+   IDataTemplateService dataTemplateService = new DataTemplateService();
 
 
     @RequestMapping("/list")
